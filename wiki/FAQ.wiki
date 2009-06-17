@@ -55,8 +55,21 @@ $document->getBoost();
 // add a field with a boost as the last parameter
 $document->addField("field", "value", 2);
 
+// or set a field boost separately
+$document->field = "value";
+$document->setFieldBoost("field", 2);
+
 // get a current field's boost
-$document->getFieldBoost("field");
+$boost = $document->getFieldBoost("field");
+
+// or get all field boosts - array indexed by field name
+$boosts = $document->getFieldBoosts();
+
+// document boosting can be removed by setting to false
+$document->setBoost(false);
+
+// field boosting can also be removed by setting to false
+$document->setFieldBoost("field", false);
 
 ...
 }}}

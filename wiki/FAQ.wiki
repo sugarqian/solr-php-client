@@ -1,6 +1,5 @@
 #summary Frequently Asked Questions
 #labels Featured
-Frequently Asked Questions:
 <wiki:toc/>
 
 = About the Library and its Authors =

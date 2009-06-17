@@ -19,6 +19,8 @@ Conduit originally submitted the PHP client to the Solr project under the Apache
 ----
 
 ==Who is Conduit IT?==
+[http://conduit-it.com http://www.conduit-it.com/images/conduit_logo.gif]
+
 Conduit Internet Technologies, Inc. is the company where I work. We started using Solr to augment our search capabilities in 2007 and continue to use it today. At the time there were PHP code samples for how to interface with Solr, but we saw a need for something more - particularly in the handling of the nitty gritty HTTP requests and response serializations. I asked my employer for permission to distribute the client source as OSS, and they happily allowed it.
 
 For more information on Conduit, please see the [http://conduit-it.com Conduit IT Web Page].

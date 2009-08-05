@@ -31,11 +31,7 @@ General usage questions.
 ----
 
 == What Example Code is Available? ==
-I plan to add Wiki pages shortly to further flush out example usage more than I've done currently in my source code comments. In the mean time there was a good article on IBM developer works that featured our PHP client:
-
- http://www.ibm.com/developerworks/opensource/library/os-php-apachesolr/
-
-NOTE: The syntax error mentioned is no longer present, and was the embarrassing result of me releasing an untested cosmetic change I made. I learned my lesson :)
+See the ExampleUsage wiki page for some PHP code as well as a link to an IBM Developer Works article.
 ----
 
 == How do I Add Document / Field Boosts? ==

@@ -34,6 +34,37 @@ General usage questions.
 See the ExampleUsage wiki page for some PHP code as well as a link to an IBM Developer Works article.
 ----
 
+== How Can I Use Additional Parameters (like fq, facet, etc) ==
+The Apache_Solr_Service::search() has its first three arguments mapped to q, start, and rows repsectively. These are the three most common parameters for any query. However, there are a number of additional parameters available to control the behavior of Solr request handlers. Any of these addtional parameters can be passed along in the search method's 4th argument. This argument takes an array of key / value pairs where the key is the additional parameter name (e.g. 'fq') and the value is a single scalar value (will be converted to a string for the query) or an array of scalar values - use arrays when a parameter has multiple values (e.g. you are sending multiple 'facet.field' values).
+
+{{{
+$solr = new Apache_Solr_Service();
+
+$query = "your query";
+$start = 0;
+$rows = 10;
+
+$additionalParameters = array(
+    'fq' => 'a filtering query',
+   'facet' => 'true',
+   // notice I use an array for a muti-valued parameter
+   'facet.field' => array(
+        'field_1',
+        'field_2'
+    )
+);
+
+$results = $solr->search($query, $start, $rows, $additionalParameters);
+}}}
+
+The call above would be mapped to the URL:
+http://localhost:8180/solr/select?q=your+query&start=0&rows=10&fq=a+filtering+query&facet=true&facet.field=field_1&facet.field=field_2
+----
+
+== How Do I Use A Non-Default Request Handler? ==
+All named request handlers can be accessed by using the 'qt' additional query parameter in your search call (see the section on additional parameters above). For example, to use the DisMax request handler configured in the distributed Solr configuration you would pass a value of 'dismax' for the the 'qt' parameter.
+----
+
 == How do I Add Document / Field Boosts? ==
 There are two levels of boost available in every document. Document level boosts apply to the whole document when searching. Field level boosts apply only to a particular document field.
 

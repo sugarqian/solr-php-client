@@ -3,6 +3,8 @@
 
 This is a listing of user submitted patches that are not currently integrated into the Solr PHP Client's codebase, but may be of interest to other users.
 
+PLEASE NOTE: some of these patches may no longer cleanly apply to current trunk, and may require changes to function as intended.
+
 = Batchable Service =
 A subclass of the Apache_Solr_Service that lets you defer commits. Attached to [http://code.google.com/p/solr-php-client/issues/detail?id=54#c2 issue #54]
 

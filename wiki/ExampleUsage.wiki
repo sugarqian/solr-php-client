@@ -1,4 +1,7 @@
 #labels Featured
+Table of Contents
+<wiki:toc />
+
 = Simple HTML Form =
 The following script should provide the kick start needed for anyone unsure of where to start with using the Solr PHP client. Its a simple script that outputs an HTML form that submits to itself. When a query is submitted to it, it will create a Solr service class instance and attempt to pass the query to the Solr. It will then display upto 10 result documents in an unordered list.
 
@@ -99,6 +102,34 @@ if ($results)
   </body>
 </html>
 }}}
+
+= Using an Alternative HTTP Transport =
+Since r49, it is now possible to use an HTTP transport implementation of your choice. An HTTP transport is responsible for making the HTTP based requests to Solr and providing the raw response back for processing. A common request is to use cURL extension for the HTTP requests rather than the built in HTTP url wrapper support, so the client provides two implementations for this. 
+
+{{{
+<?php
+
+// construct your transport of choice
+// The Curl implementation creates a single cURL session and reuses it for all requests
+// which is the suggested way to use cURL, however there was a bug in PHP across a number
+// of versions where each set of the URL caused a small memory leak until the session was released
+$transportInstance = new Apache_Solr_HttpTransport_Curl();
+
+// CurlNoReuse implementation instead creates and releases a cURL session for each request
+$transportInstance = new Apache_Solr_HttpTransport_CurlNoReuse();
+
+// A transport instance can be provided at service construction
+$solr = new Apache_Solr_Service('solr.example.com', 8180, '/solr', $transportInstance);
+
+// Or, it can be set at any time. This will be used for subsequent requests.
+$solr->setHttpTransport($transportInstance);
+
+// ... use the solr service client as you normally would ..
+
+?>
+}}}
+
+It is also possible to implement the Apache_Solr_HttpTransport_Interface with your own implementation and use that. Use cases would be using your framework of choice's builtin HTTP request methods.
 
 = IBM Developer Works Article =
 IBM Developer Works had an article featuring the use of the PHP Solr client shortly after its initial release. This article not only has example PHP code but also briefly covers some Solr setup as well.

@@ -1,0 +1,16 @@
+#summary A listing of extensions provided by users, but not currently part of the client's distribution
+#labels Featured
+
+This is a listing of user submitted patches that are not currently integrated into the Solr PHP Client's codebase, but may be of interest to other users.
+
+= Batchable Service =
+A subclass of the Apache_Solr_Service that lets you defer commits. Attached to [http://code.google.com/p/solr-php-client/issues/detail?id=54#c2 issue #54]
+
+= Highlighting API =
+A set of patches that attempt to make it simpler to use the Solr Highlighting features. Attached to [http://code.google.com/p/solr-php-client/issues/detail?id=44 issue #44]
+
+= Spell Check API =
+A set of patches that attempt to make it simpler to use the Solr spell check handler. Attached to [http://code.google.com/p/solr-php-client/issues/detail?id=41 issue #41]
+
+= TermsComponent API = 
+A set of patches that attempt to make it simpler to use the Terms request handler. Attached to [http://code.google.com/p/solr-php-client/issues/detail?id=32 issue #32]

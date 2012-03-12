@@ -18,16 +18,22 @@ This client was originally in Solr's issue tracker: https://issues.apache.org/ji
 Conduit originally submitted the PHP client to the Solr project under the Apache 2.0 license so that it was compatible to be included in the Solr distribution. Since then, we've been asked several times to allow the client to use other licenses so it could be included in other projects (e.g. a Drupal search plugin).  We think that the new BSD license is the most compatible with the largest number of other OSS licenses.
 ----
 
-==Who is Conduit IT?==
-[http://conduit-it.com http://www.conduit-it.com/images/conduit_logo.gif]
+==Who is Servigistics?==
+[http://servigistics.com http://www.servigistics.com/images/global/header/LogoMain.jpg]
 
-Conduit Internet Technologies, Inc. is the company where I work. We started using Solr to augment our search capabilities in 2007 and continue to use it today. At the time there were PHP code samples for how to interface with Solr, but we saw a need for something more - particularly in the handling of the nitty gritty HTTP requests and response serializations. I asked my employer for permission to distribute the client source as OSS, and they happily allowed it.
+Servigistics, Inc. is the company where I work. We started using Solr to augment our search capabilities in 2007 and continue to use it today. At the time there were PHP code samples for how to interface with Solr, but we saw a need for something more - particularly in the handling of the nitty gritty HTTP requests and response serializations. I asked my employer for permission to distribute the client source as OSS, and they happily allowed it.
 
-For more information on Conduit, please see the [http://conduit-it.com Conduit IT Web Page].
+For more information on Conduit, please see the [http://servigistics.com Servigistics Web Page].
 ----
 
 = General Usage =
 General usage questions.
+----
+
+== Which Version Should I use ? ==
+Trunk is kept very stable, so I would actually recommend using a checkout of that directly if you can. However, periodically, usually after a number of bug fixes and / or features we will wrap up the current version and publish it as zip and tarball download. If you don't want to use trunk then use the most recently released archive of your choosing.
+
+Please limit your submission of issues to those that are present in trunk. If you're having an issue, make sure its not resolved already in the the current trunk.
 ----
 
 == What Example Code is Available? ==
